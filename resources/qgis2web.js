@@ -9,7 +9,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-8753110.446555, -805158.321442, -8733099.320097, -793470.631696], map.getSize());
+map.getView().fit([-8752197.282248, -801506.265749, -8742770.860007, -795666.300928], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -451,7 +451,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (139 > 240) {
+        if (180 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -465,13 +465,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Implementación de los MRSE Hídricos por parte de la EPS SEDACAJ S.A. en la Cuenca de Aporte Rio Ronquillo durante los periodos 2024 - 2025.';
+                linkElement.innerHTML = 'Implementación de los MRSE Hídricos por parte de la EPS SEDACAJ S.A. en la Cuenca de Aporte Rio Ronquillo durante los periodos 2024 - 2025. SMH - Sistema de Monitoreo Hidrológico.<br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Implementación de los MRSE Hídricos por parte de la EPS SEDACAJ S.A. en la Cuenca de Aporte Rio Ronquillo durante los periodos 2024 - 2025.';
+            linkElement.innerHTML = 'Implementación de los MRSE Hídricos por parte de la EPS SEDACAJ S.A. en la Cuenca de Aporte Rio Ronquillo durante los periodos 2024 - 2025. SMH - Sistema de Monitoreo Hidrológico.<br />';
         }
 
         titleElement.appendChild(linkElement);
@@ -947,17 +947,6 @@ if (elementToMove && parentElement) {
 
 //layer search
 
-var searchLayer = new SearchLayer({
-    layer: lyr_EstacionesSMH_5,
-    colName: 'Tipo',
-    zoom: 10,
-    collapsed: true,
-    map: map
-});
-map.addControl(searchLayer);
-document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
-document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
-    
 
 //scalebar
 
